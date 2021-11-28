@@ -5,6 +5,8 @@
 .react-date-picker__wrapper {
   border: none !important;
 }
+
+/* image grayscale */
 .grayscaled{
   filter: gray; /* IE6-9 */
   -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */

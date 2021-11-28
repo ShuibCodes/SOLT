@@ -21,14 +21,14 @@ export default function Tickets({plays}) {
                         <>
                         {play.see_tickets_url_infos.length === 0 ? 
                             <div
-							style={{ maxWidth:"500px", Width: '450px', borderRadius: '1.2rem', Height: '400px' }}
+							style={{ maxWidth:"700px", Width: '500px', borderRadius: '1.2rem', Height: '400px' }}
 							key={play.id}
 							className="opacity-10 flex flex-col rounded-3xl overflow-hidden grayscale border-2"
 						>
 							<div className="flex-shrink-0">
 								<img className="grayscaled h-48 w-full object-cover" src={play.image} alt="play-image" />
 							</div>
-							<div className="flex-1 bg-white-500 p-6 flex flex-col justify-between">
+							<div className="flex-1 bg-white-500 p-2 flex flex-col justify-between">
 								<div className="flex-1">
 								<h1 className="mt-3 text-base text-gray-700 text-center text-2xl font-bold">{play.title}</h1>
 										<h3 className="mt-3 text-base text-gray-600 text-center">About the Show</h3>
@@ -55,7 +55,7 @@ export default function Tickets({plays}) {
 							<div className="flex-shrink-0">
 								<img className="h-48 w-full object-cover" src={play.image} alt="play-image" />
 							</div>
-							<div className="flex-1 bg-white p-6 flex flex-col justify-between">
+							<div className="flex-1 bg-white p-2 flex flex-col justify-between">
 								<div className="flex-1">
                                         <h1 className="mt-3 text-base text-black text-center text-2xl font-bold">{play.title}</h1>
 										<h3 className="mt-3 text-base text-gray-500 text-center">About the Show</h3>
@@ -65,8 +65,8 @@ export default function Tickets({plays}) {
 								
 							</div>
                                 <div className="">
-									<button style={{backgroundColor:"red"}} className="px-12 py-4 w-full m-auto font-bold text-white ">
-                                    <a style={{backgroundColor:"red"}} className="px-12 py-4 w-full m-auto font-bold text-white " href={play.see_tickets_url_infos[3].url}>
+									<button style={{backgroundColor:"#E23D28"}} className="px-12 py-4 w-full m-auto font-bold text-white ">
+                                    <a className=" font-bold text-white " href={play.see_tickets_url_infos[3].url}>
                                             Book Now
                                         </a>
                                     </button>

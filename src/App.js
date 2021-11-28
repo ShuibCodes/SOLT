@@ -10,7 +10,8 @@ function App() {
 
   const [plays, setPlays] = useState([])
 
-  
+
+
        
     useEffect(() => {
       fetch('https://officiallondontheatre.com/wp-json/shows/all-open')
@@ -18,6 +19,7 @@ function App() {
           return res.json();
         })
         .then(data => {
+          // only needed first 4 plays 
           setPlays(data.slice(0,4));
           
         })
@@ -27,16 +29,16 @@ function App() {
 
   return (
     <div className="h-screen flex justify-center items-center">
-        
-        {
-          plays.length === 0 ? 
+
+        {/* added a loading animation because why not? */}
+
+        { plays.length === 0 ? 
           <div>
-       
           <Loader type="Bars" color="red" height={90} width={90} />
           </div>
           
-      :
-      <Tickets plays={plays} />
+          :
+        <Tickets plays={plays} />
         }
         
   </div>
