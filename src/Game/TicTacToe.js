@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import './TicTacToe.css';
-import Modal from './extras/modal'
+import '../Game/TicTacToe.css';
+import Modal from '../extras/modal';
 
 const TicTacToe = () => {
-    const [turn, setTurn] = useState('x');
+	const [turn, setTurn] = useState('x');
 	const [cells, setCells] = useState(Array(9).fill(''));
 	const [winner, setWinner] = useState();
 
 	const checkForWinner = (squares) => {
-		let combos = {
+        
+        // arry of winning combos 
+	let combos = {
 			across: [
 				[0, 1, 2],
 				[3, 4, 5],
@@ -25,17 +27,22 @@ const TicTacToe = () => {
 			],
 		};
 
+        // checking if there is a winning combo
+
 		for (let combo in combos) {
 			combos[combo].forEach((pattern) => {
 				if (squares[pattern[0]] === '' || squares[pattern[1]] === '' || squares[pattern[2]] === '') {
 					// do nothing
-				} else if (squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]) {
+                } else if // all 3 squares are the same letter
+                
+                (squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]) {
 					setWinner(squares[pattern[0]]);
 				}
 			});
 		}
 	};
 
+    
 	const handleClick = (num) => {
 		if (cells[num] !== '') {
 			alert('already clicked');
@@ -68,7 +75,7 @@ const TicTacToe = () => {
 	return (
 		<div className="container">
 			<div style={{ padding: '20px' }}>
-				<h1 className="font-bold text-4xl" >
+				<h1 className="font-bold text-4xl">
 					Turn: <span> {turn}</span>
 				</h1>
 			</div>
@@ -94,14 +101,18 @@ const TicTacToe = () => {
 			</table>
 			{winner && (
 				<>
-					<Modal
-                    theWinner={winner}  
-                    restart={handleRestart}
-
-                     />
-					<button onClick={() => handleRestart()}>Play Again</button>
+					<Modal theWinner={winner} restart={handleRestart} />
 				</>
 			)}
+			
+			<button
+				style={{backgroundColor:"#D7AC68"}}
+                  type="button"
+                  className="w-100 my-4 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2  text-base font-medium text-black hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm"
+                  onClick={() => handleRestart()}
+                >
+                  Start Over?
+                </button>
 		</div>
 	);
 };

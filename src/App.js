@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 
 
-import TicTacToe from '../src/TicTacToe'
+import TicTacToe from './Game/TicTacToe'
 function App() {
 	return <div>
  <TicTacToe />

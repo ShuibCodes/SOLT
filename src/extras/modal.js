@@ -5,14 +5,15 @@ import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/outline'
 import crown from '../assets/crown.png'
 export default function Modal(props) {
+
   const [open, setOpen] = useState(true)
 
-  const cancelButtonRef = useRef(null)
+
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" initialFocus={cancelButtonRef} onClose={setOpen}>
-        <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto"  onClose={setOpen}>
+        <div className="-mt-64 md:-mt-32 flex items-end justify-center min-h-screen pt-4 px-4  text-center sm:block sm:p-0">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -25,7 +26,7 @@ export default function Modal(props) {
             <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
-          {/* This element is to trick the browser into centering the modal contents. */}
+            {/* centers modal */}
           <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
             &#8203;
           </span>
