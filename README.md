@@ -1,8 +1,7 @@
 # React TicTacToe game
 
+<img width="634" alt="Screenshot 2022-03-28 at 11 17 02" src="https://user-images.githubusercontent.com/71759511/160377594-f2a277d0-1c8d-4e9b-984b-fb924f8fd689.png">
 
-
-![107204678-dc117380-69f4-11eb-890e-5359888ed79c](https://user-images.githubusercontent.com/71759511/160376458-453aeef7-84b6-4e9e-abf9-b9a82d8fdf02.png)
 
 
 
