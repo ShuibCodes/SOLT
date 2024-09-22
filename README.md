@@ -6,9 +6,6 @@
 
 
 
-
-by Shuib, or otherwise known as Abdi
-
 ## Description
 
 This task was built using React hooks, CSS and TailwindCSS for the popup modal
